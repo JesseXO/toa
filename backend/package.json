@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FarahBebs/crwn-clothing-api.git"
+    "url": "git+https://github.com/FarahBebs/toagiyim-clothing-api.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FarahBebs/crwn-clothing-api/issues"
+    "url": "https://github.com/FarahBebs/toagiyim-clothing-api/issues"
   },
-  "homepage": "https://github.com/FarahBebs/crwn-clothing-api#readme",
+  "homepage": "https://github.com/FarahBebs/toagiyim-clothing-api#readme",
   "dependencies": {
     "@types/cors": "^2.8.18",
     "bcrypt": "^5.1.1",

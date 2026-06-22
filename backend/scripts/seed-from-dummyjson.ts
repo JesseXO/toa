@@ -9,7 +9,7 @@
  * from the source IDs (uuidv5 with a fixed namespace).
  *
  * Usage:
- *   cd crwn-clothing-be
+ *   cd toagiyim-clothing-be
  *   npx ts-node --project tsconfig.json scripts/seed-from-dummyjson.ts [--reset]
  *
  * --reset wipes the existing products table first (categories stay). Default

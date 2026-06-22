@@ -1,4 +1,4 @@
-# 👑 CRWN Clothing - Modern E-Commerce Platform
+# 👑 TOAGIYIM Clothing - Modern E-Commerce Platform
 
 A fully redesigned, modern e-commerce web application built with React, featuring a stunning dark theme with glassmorphism effects, interactive user experience, and comprehensive admin capabilities.
 
@@ -111,7 +111,7 @@ A fully redesigned, modern e-commerce web application built with React, featurin
 ## 📁 Project Structure
 
 \`\`\`
-crwn-clothing-uni/
+toagiyim-clothing-uni/
 ├── public/
 │   ├── index.html
 │   ├── manifest.json
@@ -187,8 +187,8 @@ crwn-clothing-uni/
 
 1. **Clone the repository**
    \`\`\`bash
-   git clone https://github.com/FarahBebs/crwn-clothing-uni.git
-   cd crwn-clothing-uni
+   git clone https://github.com/FarahBebs/toagiyim-clothing-uni.git
+   cd toagiyim-clothing-uni
    \`\`\`
 
 2. **Install dependencies**
@@ -343,8 +343,8 @@ This project is licensed under the MIT License.
 
 ## 👥 Credits
 
-**Developer**: CRWN Clothing Team  
-**Repository**: [github.com/FarahBebs/crwn-clothing-uni](https://github.com/FarahBebs/crwn-clothing-uni)
+**Developer**: TOAGIYIM Clothing Team  
+**Repository**: [github.com/FarahBebs/toagiyim-clothing-uni](https://github.com/FarahBebs/toagiyim-clothing-uni)
 
 ## 🆘 Support
 

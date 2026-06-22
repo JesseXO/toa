@@ -11,7 +11,7 @@ Quick start:
     python train_measurement_head.py
 
     # Or on Colab:
-    !git clone https://github.com/OmarJesse/crwn-clothing-fe ...
+    !git clone https://github.com/OmarJesse/toagiyim-clothing-fe ...
     !pip install tensorflow==2.15.0
     %cd evaluation/python
     !python train_measurement_head.py --epochs 30
@@ -391,6 +391,6 @@ if __name__ == "__main__":
     parser.add_argument("--save", type=str, default="results/measurement_head.h5",
                         help="Path to save the trained Keras model")
     parser.add_argument("--tfjs-out", type=str,
-                        default="../../crwn-clothing-fe/public/models/measurement-head",
+                        default="../../toagiyim-clothing-fe/public/models/measurement-head",
                         help="Where tensorflowjs_converter should drop the converted model")
     main(parser.parse_args())

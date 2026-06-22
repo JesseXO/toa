@@ -1,4 +1,4 @@
-// Extracted pure-form copy of crwn-clothing-fe/src/utils/product-style-match.js
+// Extracted pure-form copy of toagiyim-clothing-fe/src/utils/product-style-match.js
 // for Node-side evaluation.
 
 const STYLE_TAG_MAP = {

@@ -9,7 +9,7 @@
  * are stable.
  *
  * Usage:
- *   cd crwn-clothing-be
+ *   cd toagiyim-clothing-be
  *   npx ts-node --project tsconfig.json scripts/fix-product-images.ts
  */
 

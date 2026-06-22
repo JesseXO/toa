@@ -357,7 +357,7 @@ The components that were refactored to use this scheme: product card, cart drawe
 
 ### 6.5 The Toggle
 
-The nav cycles ☀️ Light → 🌙 Dark → 🌅 Sunset on click. The choice persists to `localStorage` under the key `crwn-theme`. On a fresh visit with no stored preference, the system reads `prefers-color-scheme: dark` from the browser. Theme variants were chosen with intention:
+The nav cycles ☀️ Light → 🌙 Dark → 🌅 Sunset on click. The choice persists to `localStorage` under the key `toagiyim-theme`. On a fresh visit with no stored preference, the system reads `prefers-color-scheme: dark` from the browser. Theme variants were chosen with intention:
 
 - **Light** — the default. Indigo primary, pink secondary, emerald accent. Slate neutrals.
 - **Dark** — true dark backgrounds (slate-950 / slate-900), softer indigo and pink primaries, light text. Glass blur values increased for legibility.

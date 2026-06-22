@@ -1,5 +1,5 @@
 // ESM loader for the real ANSUR II anthropometric survey, for the evaluation
-// harness. Mirrors crwn-clothing-be/scripts/ansur-loader.ts: converts the raw
+// harness. Mirrors toagiyim-clothing-be/scripts/ansur-loader.ts: converts the raw
 // CSV (mm, and deci-kg for weight) into the cm/kg fields the classifier uses.
 
 import { readFileSync, existsSync } from "node:fs";

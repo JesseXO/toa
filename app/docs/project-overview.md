@@ -1,4 +1,4 @@
-# CRWN Clothing – Project Overview and Differentiators
+# TOAGIYIM Clothing – Project Overview and Differentiators
 
 ## What This Project Is
 - Modern React-based e-commerce experience with dark glassmorphism design, real-time search, admin tooling, and end-to-end checkout via Stripe.

@@ -5,15 +5,15 @@
 > (narrative), [THESIS.md](THESIS.md) (defense), and
 > [EVALUATION.md](EVALUATION.md) (methodology).
 
-**Live frontend:** https://crwn-clothing-fe.onrender.com
-**Live API:** https://crwn-clothing-api-a0wa.onrender.com
+**Live frontend:** https://toagiyim-clothing-fe.onrender.com
+**Live API:** https://toagiyim-clothing-api-a0wa.onrender.com
 **Stack:** React 18 + styled-components + framer-motion (FE) · Express 5 +
 Sequelize + Postgres (API) · TensorFlow.js + MediaPipe (in-browser CV) · Stripe.
 
 **Repo layout:** this is the API repo. It also now hosts the project's
 `datasets/` (ANSUR II CSVs), `evaluation/` (metrics harness), and `docs/`
 (this file plus the thesis docs), so everything except the React front-end
-(`crwn-clothing-fe`, separate repo) is version-controlled here.
+(`toagiyim-clothing-fe`, separate repo) is version-controlled here.
 
 ---
 
@@ -201,12 +201,12 @@ validation). Run logs print the dataset, sample counts, and metrics; see
 
 | Tier | Render service | URL | Build | Runtime |
 |------|----------------|-----|-------|---------|
-| Frontend | Static Site | `crwn-clothing-fe.onrender.com` | `npm ci --legacy-peer-deps` → `npm run build` (CRA) | static `build/` on Render's CDN |
-| API | Web Service (`srv-d8g2u8t8nd3s7396kmlg`) | `crwn-clothing-api-a0wa.onrender.com` | `npm install --include=dev && npx tsc` | `node dist/index.js` |
-| Database | Managed Postgres 16 (`crwn-postgres`) | — | — | Postgres |
+| Frontend | Static Site | `toagiyim-clothing-fe.onrender.com` | `npm ci --legacy-peer-deps` → `npm run build` (CRA) | static `build/` on Render's CDN |
+| API | Web Service (`srv-d8g2u8t8nd3s7396kmlg`) | `toagiyim-clothing-api-a0wa.onrender.com` | `npm install --include=dev && npx tsc` | `node dist/index.js` |
+| Database | Managed Postgres 16 (`toagiyim-postgres`) | — | — | Postgres |
 
-The app lives in **two separate GitHub repos** — `OmarJesse/crwn-clothing-fe`
-(React) and `OmarJesse/crwn-clothing-be` (this repo: API + datasets + evaluation
+The app lives in **two separate GitHub repos** — `OmarJesse/toagiyim-clothing-fe`
+(React) and `OmarJesse/toagiyim-clothing-be` (this repo: API + datasets + evaluation
 + docs). Each is its own Render service connected to that repo's `main` branch.
 
 ### 8.2 Render (API) — service config
@@ -262,9 +262,9 @@ redeploy it from the dashboard (**Manual Deploy**) or by pushing to its `main`.
 
 ```bash
 # API on new code? (should be JSON 200, not 404)
-curl https://crwn-clothing-api-a0wa.onrender.com/insights/population
+curl https://toagiyim-clothing-api-a0wa.onrender.com/insights/population
 # product schema picked up new columns? (look for "gender")
-curl https://crwn-clothing-api-a0wa.onrender.com/products/<categoryId>
+curl https://toagiyim-clothing-api-a0wa.onrender.com/products/<categoryId>
 ```
 
 ### 8.4b CI — `.github/workflows/ci.yml`
@@ -274,7 +274,7 @@ GitHub Actions (build/verify only — it does **not** deploy): a `frontend` job
 and an `evaluation` job (`node run-all.js`, uploads `results.json` + `RESULTS.md`).
 
 > The workflow file currently sits in the untracked `uni/.github/` and is
-> written monorepo-style (`working-directory: crwn-clothing-be|crwn-clothing-fe|
+> written monorepo-style (`working-directory: toagiyim-clothing-be|toagiyim-clothing-fe|
 > evaluation`). Since `evaluation/` now lives inside this repo, committing a
 > repo-local `.github/workflows/ci.yml` here (backend + evaluation jobs, paths
 > relative to the repo root) would make CI actually run on push.

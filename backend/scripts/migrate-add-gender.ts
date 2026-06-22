@@ -10,7 +10,7 @@
  *                       `unisex`.
  *
  * Usage:
- *   cd crwn-clothing-be
+ *   cd toagiyim-clothing-be
  *   npx ts-node --project tsconfig.json scripts/migrate-add-gender.ts
  */
 

@@ -1,5 +1,5 @@
 // Extracted pure-form copy of
-// crwn-clothing-fe/src/routes/onboarding/inference/measurements.js
+// toagiyim-clothing-fe/src/routes/onboarding/inference/measurements.js
 // Re-exported here so the eval harness can run in plain Node without the FE build.
 // If the runtime version is updated, this file should be kept in sync.
 
@@ -14,7 +14,7 @@ export const computeBmi = (heightCm, weightKg) => {
 };
 
 // FFIT body-shape classification (bust=chest / waist / hip). Kept in sync with
-// crwn-clothing-be/src/services/bodyShape.ts and the FE measurements.js.
+// toagiyim-clothing-be/src/services/bodyShape.ts and the FE measurements.js.
 const BALANCE_TOL = 0.07;
 const DEFINED_WAIST = 0.85;
 const UNDEFINED_WAIST_WHR = 0.9;

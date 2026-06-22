@@ -1,6 +1,6 @@
 # Evaluation Harness
 
-A standalone Node-side evaluation suite for the CRWN fit-aware pipeline. Computes the metrics the thesis reviewer asked for (Accuracy, Precision, Recall, F1, MAE, Top-K Accuracy, MRR) against synthetic anthropometric data.
+A standalone Node-side evaluation suite for the TOAGIYIM fit-aware pipeline. Computes the metrics the thesis reviewer asked for (Accuracy, Precision, Recall, F1, MAE, Top-K Accuracy, MRR) against synthetic anthropometric data.
 
 For the methodology behind every number see [`../EVALUATION.md`](../EVALUATION.md).
 

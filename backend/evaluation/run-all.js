@@ -18,7 +18,7 @@ const RESULTS_DIR = join(__dirname, "results");
 const stamp = new Date().toISOString();
 
 console.log("=".repeat(70));
-console.log("CRWN Fit-Aware Commerce — Evaluation Harness");
+console.log("TOAGIYIM Fit-Aware Commerce — Evaluation Harness");
 console.log(`Run started: ${stamp}`);
 console.log("=".repeat(70));
 console.log();

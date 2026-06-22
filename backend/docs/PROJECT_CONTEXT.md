@@ -3,9 +3,9 @@
 > A single self-contained document covering the project ideation, the system as it stands, the technologies used, evaluation methodology and real measured results, the conceptual training pipeline, datasets used and proposed for validation, and the live deployment. Intended as the master reading for a thesis defense or reviewer briefing.
 
 **Last updated:** 2026-06-03
-**Live frontend:** `https://crwn-clothing-kmt.pages.dev`
-**Live backend:** `https://crwn-clothing-api-a0wa.onrender.com`
-**Source:** [github.com/OmarJesse/crwn-clothing-fe](https://github.com/OmarJesse/crwn-clothing-fe) · [github.com/OmarJesse/crwn-clothing-be](https://github.com/OmarJesse/crwn-clothing-be)
+**Live frontend:** `https://toagiyim-clothing-kmt.pages.dev`
+**Live backend:** `https://toagiyim-clothing-api-a0wa.onrender.com`
+**Source:** [github.com/OmarJesse/toagiyim-clothing-fe](https://github.com/OmarJesse/toagiyim-clothing-fe) · [github.com/OmarJesse/toagiyim-clothing-be](https://github.com/OmarJesse/toagiyim-clothing-be)
 
 ---
 
@@ -116,7 +116,7 @@ Triple the previous 12 — 9 products across each of the four categories (Shirts
 ### Design & collaboration
 
 - **Figma** — design exploration for theme palettes and the 4×2 tile grid layouts. The three theme variants (light, dark, sunset) were prototyped as Figma color tokens before being translated to JS.
-- **GitHub** — source control across two repositories: [crwn-clothing-fe](https://github.com/OmarJesse/crwn-clothing-fe) and [crwn-clothing-be](https://github.com/OmarJesse/crwn-clothing-be). Each major phase of work is a commit cluster in the project's history.
+- **GitHub** — source control across two repositories: [toagiyim-clothing-fe](https://github.com/OmarJesse/toagiyim-clothing-fe) and [toagiyim-clothing-be](https://github.com/OmarJesse/toagiyim-clothing-be). Each major phase of work is a commit cluster in the project's history.
 - **VS Code** with the Claude Code extension — primary editor.
 
 ### Quality gates
@@ -528,8 +528,8 @@ These are production-hardening items not addressed in the thesis prototype:
 
 | Component | URL | Hosting | Cost |
 |-----------|-----|---------|------|
-| Frontend | `https://crwn-clothing-kmt.pages.dev` | Cloudflare Pages | $0 |
-| Backend | `https://crwn-clothing-api-a0wa.onrender.com` | Render Web Service | $0 |
+| Frontend | `https://toagiyim-clothing-kmt.pages.dev` | Cloudflare Pages | $0 |
+| Backend | `https://toagiyim-clothing-api-a0wa.onrender.com` | Render Web Service | $0 |
 | Database | Render Postgres `dpg-d8g2rceq1p3s73csipd0-a` | Render Postgres | $0 (free 90 days) |
 | CI/CD | GitHub Actions on push | GitHub Free | $0 |
 
@@ -580,12 +580,12 @@ DB_PASSWORD    = ••• (set)
 DB_NAME        = postgres_i5pb
 DB_SSL         = true
 JWT_SECRET     = ••• (64-char base64url)
-appOrigin      = https://crwn-clothing-kmt.pages.dev
+appOrigin      = https://toagiyim-clothing-kmt.pages.dev
 ```
 
 Cloudflare Pages build (baked into the bundle at compile time):
 ```
-REACT_APP_API_BASE_URL = https://crwn-clothing-api-a0wa.onrender.com
+REACT_APP_API_BASE_URL = https://toagiyim-clothing-api-a0wa.onrender.com
 ```
 
 The full step-by-step deployment guide is in [`DEPLOYMENT.md`](DEPLOYMENT.md).

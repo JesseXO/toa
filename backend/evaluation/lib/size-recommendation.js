@@ -1,5 +1,5 @@
 // Extracted pure-form copy of
-// crwn-clothing-fe/src/utils/size-recommendation.js
+// toagiyim-clothing-fe/src/utils/size-recommendation.js
 // for Node-side evaluation.
 
 const fitOrder = ["XS", "S", "M", "L", "XL", "XXL"];

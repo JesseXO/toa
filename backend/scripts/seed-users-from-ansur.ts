@@ -15,7 +15,7 @@
  * re-running no-ops on existing rows and never touches real accounts.
  *
  * Usage:
- *   cd crwn-clothing-be
+ *   cd toagiyim-clothing-be
  *   npx ts-node --project tsconfig.json scripts/seed-users-from-ansur.ts [options]
  *
  * Options:

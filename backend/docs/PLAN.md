@@ -127,7 +127,7 @@ This is the lay of the land before we rebuild. We **keep** the bits with stable 
 ### 3.3 Phase 3 — Multi-theme
 
 - Split [app/src/styles/theme.js](../../app/src/styles/theme.js) into `theme.light.js`, `theme.dark.js`, and one fun alt (`theme.sunset.js` or `theme.midnight.js` — user picks).
-- `ThemeContext` + `localStorage` persistence under key `crwn:theme`.
+- `ThemeContext` + `localStorage` persistence under key `toagiyim:theme`.
 - Theme toggle button in the nav cycling through variants.
 - Audit hardcoded `#fff` / `#0f172a` literals (the old onboarding component is full of them — gone after Phase 1, but check `Authentication`, `Checkout`, `CategoryPreview`).
 

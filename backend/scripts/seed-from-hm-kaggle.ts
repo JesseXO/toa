@@ -10,15 +10,15 @@
  *        kaggle competitions download \
  *          -c h-and-m-personalized-fashion-recommendations \
  *          -f articles.csv \
- *          -p crwn-clothing-be/scripts/data/
- *        unzip crwn-clothing-be/scripts/data/articles.csv.zip \
- *          -d crwn-clothing-be/scripts/data/
+ *          -p toagiyim-clothing-be/scripts/data/
+ *        unzip toagiyim-clothing-be/scripts/data/articles.csv.zip \
+ *          -d toagiyim-clothing-be/scripts/data/
  *
  *      Or grab `articles.csv` from the competition page in a browser and put it
- *      at crwn-clothing-be/scripts/data/articles.csv.
+ *      at toagiyim-clothing-be/scripts/data/articles.csv.
  *
  *   2. Run the importer:
- *        cd crwn-clothing-be
+ *        cd toagiyim-clothing-be
  *        npm install --include=dev    # picks up csv-parse if not yet installed
  *        npx ts-node --project tsconfig.json scripts/seed-from-hm-kaggle.ts \
  *          --limit 400 --reset

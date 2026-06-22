@@ -359,7 +359,7 @@ export const alpha = (hex, a) => /* hex → rgba */;
 
 Components refactored to consume these: product card, cart drawer + cart item, checkout item, hero, authentication shell + sign-in + sign-up forms, form input, navigation dock + search modal + profile popover, onboarding wizard styles, product detail, shop styles + filter sidebar, category preview.
 
-The nav cycles ☀️ Light → 🌙 Dark → 🌅 Sunset on click. The choice persists to `localStorage` under `crwn-theme`. Theme variants:
+The nav cycles ☀️ Light → 🌙 Dark → 🌅 Sunset on click. The choice persists to `localStorage` under `toagiyim-theme`. Theme variants:
 
 - **Light** — default. Indigo primary, pink secondary, emerald accent. Slate neutrals.
 - **Dark** — true dark backgrounds (slate-950 / slate-900), softer indigo and pink primaries, light text.

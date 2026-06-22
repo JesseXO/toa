@@ -48,13 +48,13 @@ Verify locally that everything still works:
 
 ```bash
 # Frontend
-cd crwn-clothing-fe
+cd toagiyim-clothing-fe
 npm install --legacy-peer-deps
 npm run build
 # Output: build/ with hashed JS bundles.
 
 # Backend
-cd ../crwn-clothing-be
+cd ../toagiyim-clothing-be
 npm install
 npx tsc --noEmit
 # Output: clean (no errors). To actually compile: `npx tsc` → ./dist/
@@ -76,9 +76,9 @@ If any of these fail locally, fix before deploying — the GitHub Actions will f
 1. Go to [dashboard.render.com](https://dashboard.render.com).
 2. Click **New +** → **PostgreSQL**.
 3. Settings:
-   - Name: `crwn-postgres`
-   - Database: `crwn`
-   - User: `crwn`
+   - Name: `toagiyim-postgres`
+   - Database: `toagiyim`
+   - User: `toagiyim`
    - Region: pick the one closest to your defense location (e.g. **Frankfurt** for EU/TR).
    - Plan: **Free**.
 4. Click **Create Database**. Wait ~1 minute for provisioning.
@@ -91,9 +91,9 @@ If any of these fail locally, fix before deploying — the GitHub Actions will f
 1. Click **New +** → **Web Service**.
 2. Pick **Build and deploy from a Git repository**, then select your GitHub repo.
 3. Settings (most are auto-detected from `backend/render.yaml`):
-   - Name: `crwn-clothing-api`
+   - Name: `toagiyim-clothing-api`
    - Region: same as the database
-   - Root Directory: `crwn-clothing-be`
+   - Root Directory: `toagiyim-clothing-be`
    - Runtime: Node
    - Build Command: `npm install && npx tsc`
    - Start Command: `node dist/index.js`
@@ -113,14 +113,14 @@ If any of these fail locally, fix before deploying — the GitHub Actions will f
 | `DB_NAME` | (auto from Render DB) |
 
 5. Click **Create Web Service**. Render will build (~3–5 min on first deploy).
-6. Once live, copy the public URL — it'll look like `https://crwn-clothing-api.onrender.com`.
+6. Once live, copy the public URL — it'll look like `https://toagiyim-clothing-api.onrender.com`.
 
 > ⚠ **15-min idle spin-down.** Render free services sleep after 15 minutes of no traffic. The first request after sleep takes ~30 s to wake up. For demo day, hit the URL once 30 s before showing it.
 
 ### 4.3 Verify the API Is Live
 
 ```bash
-curl https://crwn-clothing-api.onrender.com/categories
+curl https://toagiyim-clothing-api.onrender.com/categories
 # Expected: JSON list of seeded categories.
 ```
 
@@ -135,7 +135,7 @@ If you get 502s, check Render's **Logs** tab — most likely the Postgres env va
 1. Go to [vercel.com/new](https://vercel.com/new).
 2. Import your GitHub repo.
 3. Vercel auto-detects Create React App. Settings:
-   - **Root Directory**: `crwn-clothing-fe`
+   - **Root Directory**: `toagiyim-clothing-fe`
    - **Build Command**: `npm run build` (default)
    - **Output Directory**: `build` (default)
    - **Install Command**: `npm install --legacy-peer-deps` ← **change this** (CRA's old react-redux needs the flag)
@@ -146,7 +146,7 @@ Add an environment variable in the Vercel project settings:
 
 | Var | Value |
 |-----|-------|
-| `REACT_APP_API_BASE_URL` | `https://crwn-clothing-api.onrender.com` (from §4.2) |
+| `REACT_APP_API_BASE_URL` | `https://toagiyim-clothing-api.onrender.com` (from §4.2) |
 
 This is consumed by the Axios interceptor in [`app/src/store/network/interceptor.js`](../../app/src/store/network/interceptor.js).
 
@@ -154,14 +154,14 @@ This is consumed by the Axios interceptor in [`app/src/store/network/interceptor
 
 Click **Deploy**. First build takes ~4 minutes.
 
-Once live, your URL will be something like `https://crwn-clothing.vercel.app` or `https://<repo-name>.vercel.app`.
+Once live, your URL will be something like `https://toagiyim-clothing.vercel.app` or `https://<repo-name>.vercel.app`.
 
 ### 5.4 Wire Backend CORS
 
-Go back to Render → your `crwn-clothing-api` web service → **Environment** → set:
+Go back to Render → your `toagiyim-clothing-api` web service → **Environment** → set:
 
 ```
-appOrigin = https://crwn-clothing.vercel.app   (or whatever Vercel gave you)
+appOrigin = https://toagiyim-clothing.vercel.app   (or whatever Vercel gave you)
 ```
 
 Render will redeploy automatically (~30 s).
@@ -215,14 +215,14 @@ Render's free Postgres expires after 90 days. **Neon** offers a free Postgres wi
 1. Go to [console.neon.tech](https://console.neon.tech), sign up, create a project.
 2. From the dashboard, copy the connection string. It looks like:
    ```
-   postgresql://crwn:••••••@ep-cool-bird-12345.eu-central-1.aws.neon.tech/crwn
+   postgresql://toagiyim:••••••@ep-cool-bird-12345.eu-central-1.aws.neon.tech/toagiyim
    ```
 3. Parse it into the five env vars Render needs:
    - `DB_HOST`: `ep-cool-bird-12345.eu-central-1.aws.neon.tech`
    - `DB_PORT`: `5432`
-   - `DB_USER`: `crwn`
+   - `DB_USER`: `toagiyim`
    - `DB_PASSWORD`: (the password section)
-   - `DB_NAME`: `crwn`
+   - `DB_NAME`: `toagiyim`
 4. On Render → your web service → Environment → **disconnect** the auto-bound database, then set the five vars manually to the Neon values.
 5. Click **Manual Deploy** to re-deploy with the new DB.
 

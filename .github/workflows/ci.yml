@@ -39,7 +39,7 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: crwn-fe-build-${{ github.sha }}
+          name: toagiyim-fe-build-${{ github.sha }}
           path: app/build
           retention-days: 7
 

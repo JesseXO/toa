@@ -29,7 +29,7 @@ from ratelimit import limits, sleep_and_retry
 
 
 USER_AGENT = (
-    "CRWN-Thesis-Research/1.0 (Academic Use; contact: thesis@example.edu) "
+    "TOAGIYIM-Thesis-Research/1.0 (Academic Use; contact: thesis@example.edu) "
     "Mozilla/5.0 (compatible)"
 )
 

@@ -12,7 +12,7 @@
  * stable slug, and insertion uses ignoreDuplicates, so re-running no-ops.
  *
  * Usage:
- *   cd crwn-clothing-be
+ *   cd toagiyim-clothing-be
  *   npx ts-node --project tsconfig.json scripts/seed-apparel-balance.ts
  */
 
