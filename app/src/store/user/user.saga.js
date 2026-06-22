@@ -1,0 +1,106 @@
+import { call, put, takeLatest, all } from "redux-saga/effects";
+import USER_ACTION_TYPES from "./user.types";
+import { signInWithEmail, getCurrentUser, signOutUser, signUp as signUpWithEmail, inferBodyProfile as inferBodyProfileRequest } from "../network/user";
+import { onboardingFailed, onboardingSuccess, signInFailed, signInSuccess, signOutFailed, signOutSuccess, signUpFailed, signUpSuccess } from "./user.action";
+import { store } from "../store";
+
+export function* setTokensAndGetCurrentUserProfile(tokens, action, onboardingRequired = false) {
+  try {
+    const func = action === 'signIn' ? signInSuccess : signUpSuccess;
+    const user = yield call(
+      getCurrentUser,
+      tokens.token
+    );
+    yield put(func(tokens, user, onboardingRequired || !user?.onboardingCompletedAt));
+  } catch (error) {
+    yield put(signInFailed(error));
+  }
+}
+
+export function* signInStart({ payload: { email, password } }) {
+  try {
+    const tokens = yield call(
+      signInWithEmail,
+      email,
+      password
+    );
+    yield call(setTokensAndGetCurrentUserProfile, tokens, 'signIn');
+  } catch (error) {
+    yield put(signInFailed(error));
+  }
+}
+
+export function* signUp({ payload: { email, password, displayName, gender } }) {
+  try {
+    const tokens = yield call(
+      signUpWithEmail,
+      email,
+      password,
+      displayName,
+      gender
+    );
+    yield call(setTokensAndGetCurrentUserProfile, tokens, 'signUp', tokens.onboardingRequired);
+  } catch (error) {
+    yield put(signUpFailed(error));
+  }
+}
+
+export function* onboarding({ payload }) {
+  try {
+    const token = store.getState().user.tokens?.token;
+    const profile = yield call(inferBodyProfileRequest, token, payload);
+    yield put(onboardingSuccess(profile.profile));
+  } catch (error) {
+    yield put(onboardingFailed(error));
+  }
+}
+
+export function* isUserAuthenticated() {
+  try {
+    yield call(getCurrentUser);
+  } catch (error) {
+    yield put(signInFailed(error));
+  }
+}
+
+export function* signOut() {
+  try {
+    if (store.getState().user.tokens?.token) {
+      yield call(signOutUser);
+    }
+    yield put(signOutSuccess());
+  } catch (error) {
+    yield put(signOutSuccess());
+    yield put(signOutFailed(error));
+  }
+}
+
+export function* onSignOutStart() {
+  yield takeLatest(USER_ACTION_TYPES.SIGN_OUT_START, signOut);
+}
+
+export function* onSignUpStart() {
+  yield takeLatest(USER_ACTION_TYPES.SIGN_UP_START, signUp);
+}
+
+export function* OnSignInStart() {
+  yield takeLatest(USER_ACTION_TYPES.SIGN_IN_START, signInStart);
+}
+
+export function* onCheckUserSession() {
+  yield takeLatest(USER_ACTION_TYPES.CHECK_USER_SESSION, isUserAuthenticated);
+}
+
+export function* onOnboardingStart() {
+  yield takeLatest(USER_ACTION_TYPES.ONBOARDING_START, onboarding);
+}
+
+export function* userSaga() {
+  yield all([
+    call(onCheckUserSession),
+    call(OnSignInStart),
+    call(onSignUpStart),
+    call(onOnboardingStart),
+    call(onSignOutStart),
+  ]);
+}

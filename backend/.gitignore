@@ -1,0 +1,7 @@
+node_modules
+dist/
+.env
+yarn-error.log
+.DS_Store
+# H&M Kaggle CSV is too big for git; live locally only
+scripts/data/

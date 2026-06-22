@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Builds / compiled output
+dist/
+**/dist/
+build/
+**/build/
+*.tsbuildinfo
+
+# Secrets & env — never commit
+.env
+.env.*
+**/.env
+**/.env.*
+kaggle.json
+**/kaggle.json
+~/.kaggle
+
+# Large datasets that aren't checked in (download locally)
+backend/scripts/data/
+
+# Evaluation machine-readable output
+backend/evaluation/results/results.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# OS / editor
+.DS_Store
+**/.DS_Store
+.vscode/
+.idea/
